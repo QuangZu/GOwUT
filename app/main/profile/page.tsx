@@ -459,7 +459,7 @@ export default function ProfilePage() {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-4">Interests</h3>
                   <div className="flex flex-wrap gap-3 justify-center">
-                    {(userData?.vibes || []).map((vibe, index) => {
+                    {(userData?.vibes || []).map((vibe: any, index: number) => {
                       const Icon = vibe.icon
                       return (
                         <div
