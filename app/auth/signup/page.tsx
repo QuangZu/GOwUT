@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Mail, Lock, User, Eye, EyeOff, Sparkles } from 'lucide-react'
 import { useAuth } from '../../../components/providers/AuthProvider'
+import FireworkAnimation from '../../../components/ui/FireworkAnimation'
 
 export default function SignupPage() {
   const router = useRouter()
@@ -71,8 +72,10 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4 relative overflow-hidden">
+      {/* Firework Animation Background */}
+      <FireworkAnimation />
+      <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold text-white font-bold drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
             <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>

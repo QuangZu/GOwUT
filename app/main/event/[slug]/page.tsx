@@ -18,6 +18,7 @@ import {
   Ticket,
   ChevronRight
 } from 'lucide-react'
+import FireworkAnimation from '../../../../components/ui/FireworkAnimation'
 
 export default function EventDetails({ params }: { params: Promise<{ slug: string }> }) {
   const [isSaved, setIsSaved] = useState(false)
@@ -79,8 +80,10 @@ Connect with fellow music enthusiasts, dance until dawn, and immerse yourself in
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="max-w-7xl mx-auto px-6 py-8">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Firework Animation Background */}
+      <FireworkAnimation />
+      <div className="max-w-7xl mx-auto px-6 py-8 relative z-10">
         {/* Back Navigation */}
         <div className="mb-6">
           <Link href="/main/timeline" className="inline-flex items-center gap-2 text-muted hover:text-foreground transition-colors cursor-pointer">
@@ -232,8 +235,9 @@ Connect with fellow music enthusiasts, dance until dawn, and immerse yourself in
                   ))}
                 </div>
 
-                <button className="w-full py-4 bg-primary hover:bg-primary/90 text-foreground font-bold rounded-2xl transition-all duration-300 cursor-pointer">
-                  Get Tickets
+                <button className="w-full py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-foreground font-bold rounded-2xl transition-all duration-300 cursor-pointer relative overflow-hidden group hover:border-transparent group">
+                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent relative z-10">Get Tickets</span>
+                  <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </button>
               </div>
 

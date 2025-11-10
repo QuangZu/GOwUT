@@ -16,7 +16,8 @@ import {
   TrendingUp,
   Navigation,
   X,
-  ArrowLeft
+  ArrowLeft,
+  Check
 } from 'lucide-react'
 import FireworkAnimation from '../../../components/ui/FireworkAnimation'
 import ScrollAnimate from '../../../components/ui/ScrollAnimate'
@@ -321,7 +322,7 @@ export default function SearchPage() {
                   onClick={() => toggleFilter(filter.id)}
                   className={`group flex items-center gap-3 px-6 py-4 rounded-2xl backdrop-blur-xl border transition-all duration-300 hover:scale-105 cursor-pointer ${
                     selectedFilters.includes(filter.id)
-                      ? 'bg-primary/30 border-primary text-foreground shadow-lg shadow-primary/20'
+                      ? 'bg-gradient-to-r from-primary/30 to-secondary/30 border-primary text-foreground shadow-lg shadow-primary/30'
                       : 'bg-card border-border text-muted hover:bg-card-hover hover:border-border-hover'
                   }`}
                 >
@@ -331,7 +332,9 @@ export default function SearchPage() {
                     <div className="text-xs opacity-70">{filter.count} events</div>
                   </div>
                   {selectedFilters.includes(filter.id) && (
-                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                    <div className="ml-auto w-5 h-5 bg-primary rounded-full flex items-center justify-center">
+                      <Check className="w-3 h-3 text-foreground" size={12} />
+                    </div>
                   )}
                 </button>
               ))}

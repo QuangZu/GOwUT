@@ -186,49 +186,47 @@ export default function Dashboard() {
       {/* Firework Animation Background */}
       <FireworkAnimation />
 
-      <div className="min-h-screen relative z-10">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          {/* Main Feed */}
-          <main className="flex-1 overflow-y-auto">
-            {/* Feed Header */}
-            <ScrollAnimate>
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-4">
-                  <h2 className="text-3xl font-bold text-foreground">For You</h2>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-full">
-                    <Sparkles className="w-4 h-4 text-primary" />
-                    <span className="text-sm text-foreground-secondary font-medium">AI Curated</span>
-                  </div>
+      <div className="max-w-7xl mx-auto px-6 py-8 relative z-10">
+        {/* Main Feed */}
+        <main>
+          {/* Feed Header */}
+          <ScrollAnimate>
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-4">
+                <h2 className="text-3xl font-bold text-foreground">For You</h2>
+                <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-full">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-foreground-secondary font-medium">AI Curated</span>
                 </div>
-
-                <button className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors">
-                  <MoreHorizontal className="w-5 h-5 text-muted" />
-                  <span className="text-sm text-muted hidden sm:block">More</span>
-                </button>
               </div>
-            </ScrollAnimate>
 
-            {/* Event Cards Grid */}
-            <ScrollAnimate delay={100}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
-                {mockEvents.map((event, index) => (
-                  <div key={event.id} className="w-full">
-                    <EventCard event={event} index={index} />
-                  </div>
-                ))}
-              </div>
-            </ScrollAnimate>
+              <button className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors">
+                <MoreHorizontal className="w-5 h-5 text-muted" />
+                <span className="text-sm text-muted hidden sm:block">More</span>
+              </button>
+            </div>
+          </ScrollAnimate>
 
-            {/* Load More */}
-            <ScrollAnimate>
-              <div className="text-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-foreground font-medium rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 cursor-pointer">
-                  Discover More Events
-                </button>
-              </div>
-            </ScrollAnimate>
-          </main>
-        </div>
+          {/* Event Cards Grid */}
+          <ScrollAnimate delay={100}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+              {mockEvents.map((event, index) => (
+                <div key={event.id} className="w-full">
+                  <EventCard event={event} index={index} />
+                </div>
+              ))}
+            </div>
+          </ScrollAnimate>
+
+          {/* Load More */}
+          <ScrollAnimate>
+            <div className="text-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-foreground font-medium rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 cursor-pointer">
+                Discover More Events
+              </button>
+            </div>
+          </ScrollAnimate>
+        </main>
       </div>
     </div>
   )
