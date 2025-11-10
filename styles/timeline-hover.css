@@ -1,0 +1,69 @@
+/* Timeline page hover effects */
+.timeline-header {
+  position: relative;
+}
+
+.timeline-header::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: var(--primary, #3A4C91) / 0.2; /* Using the theme's primary color */
+  z-index: -1;
+  transition: transform .3s ease;
+  border-radius: 0.5rem; /* Match the border radius of the text */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.timeline-header:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Apply to regular headers too */
+.timeline-regular-header {
+  position: relative;
+}
+
+.timeline-regular-header::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: var(--primary, #3A4C91) / 0.15; /* Using the theme's primary color */
+  z-index: -1;
+  transition: transform .3s ease;
+  border-radius: 0.5rem; /* Match the border radius of the text */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.timeline-regular-header:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Hover effect for timeline event titles */
+.timeline-event-title {
+  position: relative;
+  display: inline-block;
+}
+
+.timeline-event-title::before {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Position just below the text */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary, #3A4C91); /* Using the theme's primary color */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.timeline-event-title:hover::before {
+  width: 100%;
+}
