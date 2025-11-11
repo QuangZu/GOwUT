@@ -9,11 +9,11 @@ interface ScrollAnimateProps {
   duration?: number;
 }
 
-const ScrollAnimate = ({ 
-  children, 
-  className = '', 
+const ScrollAnimate = ({
+  children,
+  className = '',
   delay = 0,
-  duration = 0.6 
+  duration = 0.6
 }: ScrollAnimateProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -46,8 +46,8 @@ const ScrollAnimate = ({
   }, []);
 
   const baseClasses = `transition-all duration-${Math.round(duration * 1000)} ease-out`;
-  const animationClasses = isVisible 
-    ? 'opacity-100 scale-100 translate-y-0' 
+  const animationClasses = isVisible
+    ? 'opacity-100 scale-100 translate-y-0'
     : 'opacity-0 scale-95 translate-y-4';
 
   return (

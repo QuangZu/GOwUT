@@ -199,7 +199,7 @@ export default function Dashboard() {
                   <span className="text-sm text-foreground-secondary font-medium">AI Curated</span>
                 </div>
               </div>
-
+              
               <button className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors">
                 <MoreHorizontal className="w-5 h-5 text-muted" />
                 <span className="text-sm text-muted hidden sm:block">More</span>
